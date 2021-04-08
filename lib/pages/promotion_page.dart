@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pi_data/Welcome/welcome_screen.dart';
 import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/config/strings.dart';
 import 'package:pi_data/model/promotion_model.dart';
@@ -29,10 +30,10 @@ class _PromotionPageState extends State<PromotionPage> {
           FlatButton(
             child: Text(promotionSkipText,style: TextStyle(color: whiteColor,fontSize: 15),),
             onPressed: () {
-             /* Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => WelcomeScreen()),
-              );*/
+              );
             },
           ),
         ],
