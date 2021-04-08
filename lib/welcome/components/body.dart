@@ -16,7 +16,7 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: size.height * 0.05),
-            Text("Pidata.",style: TextStyle(fontFamily: 'logoFont',fontSize:size.width * 0.20,color:primaryColor),),
+            Text("Pidata",style: TextStyle(fontFamily: 'logoFont',fontSize:size.width * 0.20,color:primaryColor),),
             Text("currency",style: TextStyle(fontFamily: 'primaryFont',fontSize:size.width * 0.10,color:primaryColor,height: 0.8),),
             SizedBox(height: size.height * 0.05),
 
