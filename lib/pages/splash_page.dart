@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/config/strings.dart';
+import 'package:pi_data/pages/promotion_page.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -27,16 +29,15 @@ class _SplashPageState extends State<SplashPage> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => OnBoardPage(),
+          builder: (context) => PromotionPage(),
         ));
   }
 
   @override
   Widget build(BuildContext context) {
-    double appBar=AppBar().preferredSize.height;
+
     double width=MediaQuery.of(context).size.width;
-    double height=MediaQuery.of(context).size.height;
-    double totalHeight=height-appBar;
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -49,8 +50,8 @@ class _SplashPageState extends State<SplashPage> {
                 width: double.infinity,
                 alignment: Alignment.bottomCenter,
                 color:primaryColor,
-                child: Text(splashBottomText,
-                  style: TextStyle(fontSize:width*0.35,fontFamily: 'mainFont',color:whiteColor,height:-5),
+                child: Text(splashTopText,
+                  style: TextStyle(fontSize:width*0.26,fontFamily: 'primaryFont',color:whiteColor,height:-5),
                 ),
               ),
             ),
@@ -59,10 +60,9 @@ class _SplashPageState extends State<SplashPage> {
               child: Container(
                 width: double.infinity,
                 alignment: Alignment.topCenter,
-                child: Text(splashTopText,
-                  style: TextStyle(fontSize:width*0.20,fontFamily:'secondFont',color:primaryColor),
+                child: Text(splashBottomText,
+                  style: TextStyle(fontSize:width*0.15,fontFamily:'primaryFont',color:primaryColor),
                 ),
-
               ),
             )
           ],
