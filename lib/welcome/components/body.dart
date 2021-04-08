@@ -16,12 +16,25 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: size.height * 0.05),
-            Text("Pidata",style: TextStyle(fontFamily: 'logoFont',fontSize:size.width * 0.20,color:primaryColor),),
+            Text("Pidata.",style: TextStyle(fontFamily: 'logoFont',fontSize:size.width * 0.20,color:primaryColor),),
             Text("currency",style: TextStyle(fontFamily: 'primaryFont',fontSize:size.width * 0.10,color:primaryColor,height: 0.8),),
             SizedBox(height: size.height * 0.05),
-            RoundedButton(
-              text: "GİRİŞ YAP",
-              press: () {
+
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 10),
+          width: size.width * 0.8,
+          child: ClipRRect(
+
+            child: FlatButton(
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                      color:primaryColor
+
+                  )
+              ),
+              padding: EdgeInsets.symmetric(vertical: 15),
+              color: whiteColor,
+              onPressed:  () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -31,7 +44,13 @@ class Body extends StatelessWidget {
                   ),
                 );
               },
+              child: Text(
+                "GİRİŞ YAP",
+                style: TextStyle(color: primaryColor),
+              ),
             ),
+          ),
+        ),
             RoundedButton(
               text: "KAYIT OL",
               color: primaryColor,

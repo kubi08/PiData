@@ -51,7 +51,7 @@ class _SplashPageState extends State<SplashPage> {
                 alignment: Alignment.bottomCenter,
                 color:primaryColor,
                 child: Text(splashTopText,
-                  style: TextStyle(fontSize:width*0.26,fontFamily: 'primaryFont',color:whiteColor,height:-5),
+                  style: TextStyle(fontSize:width*0.26,fontFamily: 'logoFont',color:whiteColor,height:-5),
                 ),
               ),
             ),
