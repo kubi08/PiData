@@ -36,6 +36,8 @@ dependencies:
   country_list_pick: ^1.0.0+3
   flutter_cupertino_date_picker: ^0.8.0
   fdottedline: ^1.0.1
+  charts_flutter: ^0.10.0
+  font_awesome_flutter: ^8.2.0
 
 
 dev_dependencies:
