@@ -45,8 +45,8 @@ class _CurrencyDefinitionPageState extends State<CurrencyDefinitionPage> {
                 Divider(height: 1, color: Colors.grey.shade700),
                 SizedBox(height: 10), //Card
                 SizedBox(
-                    height: 180.0,
-                    width: 330.0,
+                    height: 150.0,
+                    width: 320.0,
                     child: Carousel(
                       images: [
                         ExactAssetImage("assets/images/carousel_one.png"),
@@ -62,11 +62,14 @@ class _CurrencyDefinitionPageState extends State<CurrencyDefinitionPage> {
                     )),
                 SizedBox(height: 20),
                 FDottedLine(
-                  corner: FDottedLineCorner.all(2),
+                  corner: FDottedLineCorner.all(15),
                   child: Container(
-                    margin:EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 20),
+                    margin:EdgeInsets.only(left: 10,right: 10,top: 5,bottom: 20),
                     child: Column(
                       children: [
+                        SizedBox(height: 10),
+                        Text("Para Birimi Tanımlama",style: TextStyle(fontSize: 25),),
+                        SizedBox(height: 15),
                         Container(
                           height: 50,
                           width: 320,

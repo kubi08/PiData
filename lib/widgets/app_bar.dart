@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pi_data/config/colors.dart';
 
-class AppBarWidget extends StatefulWidget {
-  @override
-  _AppBarWidgetState createState() => _AppBarWidgetState();
-}
-
-class _AppBarWidgetState extends State<AppBarWidget > {
+class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +13,7 @@ class _AppBarWidgetState extends State<AppBarWidget > {
         Icon(Icons.shopping_cart_outlined,size: 30,color: primaryColor,)
       ],
     );
-
-
   }
 }
+
+
