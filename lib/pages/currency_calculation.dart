@@ -15,10 +15,14 @@ class _CurrencyCalculationPageState extends State<CurrencyCalculationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        title: Text('Kur Hesaplama'),
+      ),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(left: 15, right: 15, top: 55),
+          margin: EdgeInsets.only(left: 15, right: 15, top: 10),
           child: FDottedLine(
             corner: FDottedLineCorner.all(15),
             child: Column(
