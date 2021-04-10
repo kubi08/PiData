@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pi_data/config/colors.dart';
 
 class CurrencyChartPage extends StatefulWidget {
   final Widget child;
@@ -17,28 +19,28 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
 
   _generateData() {
     var data1 = [
-      new Pollution(1980, 'USA', 30),
-      new Pollution(1980, 'Asia', 40),
-      new Pollution(1980, 'Europe', 10),
+      new Pollution(1980, 'Dolar', 30),
+      new Pollution(1980, 'Euro', 40),
+      new Pollution(1980, 'Lari', 10),
     ];
     var data2 = [
-      new Pollution(1985, 'USA', 100),
-      new Pollution(1980, 'Asia', 150),
-      new Pollution(1985, 'Europe', 80),
+      new Pollution(1985, 'Dolar', 100),
+      new Pollution(1980, 'Euro', 150),
+      new Pollution(1985, 'Lari', 80),
     ];
     var data3 = [
-      new Pollution(1985, 'USA', 200),
-      new Pollution(1980, 'Asia', 300),
-      new Pollution(1985, 'Europe', 180),
+      new Pollution(1985, 'Dolar', 200),
+      new Pollution(1980, 'Euro', 300),
+      new Pollution(1985, 'Lari', 180),
     ];
 
     var piedata = [
-      new Task('Work', 35.8, Color(0xff3366cc)),
-      new Task('Eat', 8.3, Color(0xff990099)),
-      new Task('Commute', 10.8, Color(0xff109618)),
-      new Task('TV', 15.6, Color(0xfffdbe19)),
-      new Task('Sleep', 19.2, Color(0xffff9900)),
-      new Task('Other', 10.3, Color(0xffdc3912)),
+      new Task('Dolar', 35.8, Color(0xff3366cc)),
+      new Task('Lari', 8.3, Color(0xff990099)),
+      new Task('Euro', 10.8, Color(0xff109618)),
+      new Task('Riyal', 15.6, Color(0xfffdbe19)),
+      new Task('Yuan', 19.2, Color(0xffff9900)),
+      new Task('Tl', 10.3, Color(0xffdc3912)),
     ];
 
     var linesalesdata = [
@@ -156,12 +158,20 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: primaryColor,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
+    ));
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
+
           appBar: AppBar(
-            backgroundColor: Color(0xff1976d2),
+
+            backgroundColor: primaryColor,
             //backgroundColor: Color(0xff308e1c),
             bottom: TabBar(
               indicatorColor: Color(0xff9962D0),
@@ -173,18 +183,20 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
                 Tab(icon: Icon(FontAwesomeIcons.chartLine)),
               ],
             ),
-            title: Text('Flutter Charts'),
+            title: Text('Para Grafiği'),
           ),
           body: TabBarView(
             children: [
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(15.0),
                 child: Container(
                   child: Center(
                     child: Column(
                       children: <Widget>[
+                        SizedBox(height: 10),
                         Text(
-                          'SO₂ emissions, by world region (in million tonnes)',style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold),),
+                          'Para Grafiği',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+                        SizedBox(height: 20,),
                         Expanded(
                           child: charts.BarChart(
                             _seriesData,
@@ -200,19 +212,20 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(15.0),
                 child: Container(
                   child: Center(
                     child: Column(
                       children: <Widget>[
+                        SizedBox(height: 10),
                         Text(
-                          'Time spent on daily tasks',style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10.0,),
+                          'Harcanan Süre',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+                        SizedBox(height: 20.0,),
                         Expanded(
                           child: charts.PieChart(
                               _seriesPieData,
                               animate: true,
-                              animationDuration: Duration(seconds: 5),
+                              animationDuration: Duration(seconds: 3),
                               behaviors: [
                                 new charts.DatumLegend(
                                   outsideJustification: charts.OutsideJustification.endDrawArea,
@@ -221,7 +234,7 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
                                   cellPadding: new EdgeInsets.only(right: 4.0, bottom: 4.0),
                                   entryTextStyle: charts.TextStyleSpec(
                                       color: charts.MaterialPalette.purple.shadeDefault,
-                                      fontFamily: 'Georgia',
+                                      fontFamily: 'primaryFont',
                                       fontSize: 11),
                                 )
                               ],
@@ -238,28 +251,30 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(15.0),
                 child: Container(
                   child: Center(
                     child: Column(
                       children: <Widget>[
+                        SizedBox(height: 10),
                         Text(
-                          'Sales for the first 5 years',style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold),),
+                          '5 Aylık değişim grafiği',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+                        SizedBox(height: 20),
                         Expanded(
                           child: charts.LineChart(
                               _seriesLineData,
                               defaultRenderer: new charts.LineRendererConfig(
                                   includeArea: true, stacked: true),
                               animate: true,
-                              animationDuration: Duration(seconds: 5),
+                              animationDuration: Duration(seconds: 2),
                               behaviors: [
-                                new charts.ChartTitle('Years',
+                                new charts.ChartTitle('Ay',
                                     behaviorPosition: charts.BehaviorPosition.bottom,
                                     titleOutsideJustification:charts.OutsideJustification.middleDrawArea),
-                                new charts.ChartTitle('Sales',
+                                new charts.ChartTitle('Para Miktarı',
                                     behaviorPosition: charts.BehaviorPosition.start,
                                     titleOutsideJustification: charts.OutsideJustification.middleDrawArea),
-                                new charts.ChartTitle('Departments',
+                                new charts.ChartTitle('Artış Miktarı',
                                   behaviorPosition: charts.BehaviorPosition.end,
                                   titleOutsideJustification:charts.OutsideJustification.middleDrawArea,
                                 )
