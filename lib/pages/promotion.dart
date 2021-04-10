@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pi_data/Welcome/welcome_screen.dart';
 import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/config/strings.dart';
@@ -16,6 +17,11 @@ class _PromotionPageState extends State<PromotionPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: primaryColor,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
+    ));
     _controller.addListener(() {
       setState(() {
         initialPage = _controller.page.round();

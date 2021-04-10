@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/config/strings.dart';
-import 'package:pi_data/pages/promotion_page.dart';
+import 'package:pi_data/pages/promotion.dart';
 
 class SplashPage extends StatefulWidget {
   @override

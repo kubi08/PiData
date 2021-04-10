@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pi_data/Login/components/background.dart';
 import 'package:pi_data/sign_up//sign_up_screen.dart';
 import 'package:pi_data/components/already_have_an_account_acheck.dart';
@@ -16,6 +17,11 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: primaryColor,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
+    ));
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(

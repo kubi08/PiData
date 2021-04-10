@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pi_data/Login/login_screen.dart';
 import 'package:pi_data/sign_up/components/background.dart';
 import 'package:pi_data/sign_up/components/social_icon.dart';
@@ -8,12 +9,18 @@ import 'package:pi_data/components/rounded_button.dart';
 import 'package:pi_data/components/rounded_input_field.dart';
 import 'package:pi_data/components/rounded_password_field.dart';
 import 'package:pi_data/config/colors.dart';
+import 'package:pi_data/widgets/bottom_navigation_bar.dart';
 
 import 'or_divider.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: primaryColor,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
+    ));
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
@@ -34,7 +41,14 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "KAYIT OL",
               press: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return BottomBarWidget();
+                    },
+                  ),
+                );
               },
             ),
             SizedBox(height: size.height * 0.03),
