@@ -1,5 +1,6 @@
 import 'package:fdottedline/fdottedline.dart';
 import 'package:flutter/material.dart';
+//
 import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/widgets/currency_dropdown.dart';
 import 'package:pi_data/widgets/custom_button.dart';
@@ -21,17 +22,17 @@ class _CurrencyCalculationPageState extends State<CurrencyCalculationPage> {
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(left: 15, right: 15, top: 10),
+          margin: EdgeInsets.only(left: 15, right: 15, top: 15),
           child: FDottedLine(
             corner: FDottedLineCorner.all(15),
             child: Column(
               children: <Widget>[
                 SizedBox(height: 10),
                 Text("Kur Hesaplama",style: TextStyle(fontSize: 25),),
-                SizedBox(height: 15),
+                SizedBox(height: 10),
                 Container(
                   margin:
-                      EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 20),
+                      EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 15),
                   child: Column(
                     children: [
                       Container(
