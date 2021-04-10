@@ -31,7 +31,7 @@ class _DropdownMenuWidgetState extends State<DropdownMenuWidget> {
           }).toList(),
           hint: SizedBox(
             width: 100.0, // for example
-            child: Text("Para Birimleri", textAlign: TextAlign.center,style:TextStyle(
+            child: Text("Para Birimi", textAlign: TextAlign.center,style:TextStyle(
                 color: Colors.black, fontSize: 14, fontWeight: FontWeight.w500) ,),
           ),
 

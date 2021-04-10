@@ -1,11 +1,7 @@
 import 'package:fdottedline/fdottedline.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:pi_data/config/colors.dart';
-import 'package:pi_data/widgets/currency_dropdown.dart';
-import 'package:pi_data/widgets/country_dropdown.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:pi_data/widgets/custom_button.dart';
+import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/widgets/slide_drawer_menu.dart';
 
 class CurrencyListPage extends StatefulWidget {
@@ -14,8 +10,6 @@ class CurrencyListPage extends StatefulWidget {
 }
 
 class _CurrencyListPageState extends State<CurrencyListPage> {
-  DateTime tarih;
-  String startDate = "Başlangıç Tarihi";
 
   @override
   Widget build(BuildContext context) {
@@ -38,153 +32,72 @@ class _CurrencyListPageState extends State<CurrencyListPage> {
               fontFamily: 'primaryFont'),
         ),
         sliderMenu: SlideDrawerMenuWidget(),
-        sliderMain: SingleChildScrollView(
-          child: Container(
-            margin: EdgeInsets.only(left: 15, right: 15,top: 10),
-            child: FDottedLine(
-              corner: FDottedLineCorner.all(10),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(height: 10),
-                  FittedBox(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 10,right: 10),
-                          height: 50,
-                          width: 320,
-                          child: FlatButton.icon(
-                            icon: Icon(Icons.monetization_on_outlined,color: secondaryColor),
-                            shape: RoundedRectangleBorder(
-                                side: new BorderSide(
-                                    color: Colors.grey.shade500, width: 1),
-                                borderRadius: BorderRadius.circular(4.0)),
-
-                            label: Padding(
-                                padding: EdgeInsets.only(left: 10),
-                                child: Row(
-                                  children: <Widget>[
-                                    DropdownMenuWidget(),
-                                  ],
-                                )),
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          margin: EdgeInsets.only(left: 10,right: 10),
-                          height: 50,
-                          width: 320,
-                          child: FlatButton.icon(
-                            icon: Icon(Icons.account_balance_outlined,color: secondaryColor,),
-                            shape: RoundedRectangleBorder(
-                                side: new BorderSide(
-                                    color: Colors.grey.shade500, width: 1),
-                                borderRadius: BorderRadius.circular(4.0)),
-
-                            label: Padding(
-                                padding: EdgeInsets.only(left: 10),
-                                child: Row(
-                                  children: <Widget>[
-                                    CountryDropdownMenuWidget(),
-                                  ],
-                                )),
-                          ),
-                        ),
-                      ],
+        sliderMain:Container(
+            color: Colors.grey.shade500.withOpacity(0.1),
+            child: ListView(
+              children: [
+                Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('assets/images/dolar_money.png'),
                     ),
+                    title: Text('Dolar'),
+                    subtitle: Text("8.65"),
+                    trailing: Icon(Icons.keyboard_arrow_right),
                   ),
-                  SizedBox(height: 10),
-                  FittedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          height: 50,
-                          width: 160,
-                          child: FlatButton.icon(
-                            shape: RoundedRectangleBorder(
-                                side: BorderSide(color: Colors.grey.shade500),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(4.0))),
-                            icon: Icon(Icons.date_range_outlined),
-                            label: Text(
-                              "Başla Tarihi",
-                              style: TextStyle(color: secondaryColor, fontSize: 14),
-                            ),
-                            color: whiteColor,
-                            onPressed: () {
-                              DatePicker.showDatePicker(context,
-                                  showTitleActions: true,
-                                  minTime: DateTime(2008, 1, 1),
-                                  maxTime: DateTime(2020, 31, 12),
-                                  onChanged: (date) {
-                                setState(() {
-                                  tarih = date;
-                                });
-
-                                print('change $date');
-                              }, onConfirm: (date) {
-                                print('confirm $date');
-                              },
-                                  currentTime: DateTime.now(),
-                                  locale: LocaleType.tr);
-                            },
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(right: 10),
-                          height: 50,
-                          width: 155,
-                          child: FlatButton.icon(
-                            shape: RoundedRectangleBorder(
-                                side: BorderSide(color: Colors.grey.shade500),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(4.0))),
-                            icon: Icon(Icons.date_range_outlined),
-                            label: Text(
-                              "Bitiş Tarihi",
-                              style: TextStyle(color: secondaryColor, fontSize: 14),
-                            ),
-                            color: whiteColor,
-                            onPressed: () {
-                              DatePicker.showDatePicker(context,
-                                  showTitleActions: true,
-                                  minTime: DateTime(2008, 1, 1),
-                                  maxTime: DateTime(2020, 31, 12),
-                                  onChanged: (date) {
-                                setState(() {
-                                  tarih = date;
-                                });
-
-                                print('change $date');
-                              }, onConfirm: (date) {
-                                print('confirm $date');
-                              },
-                                  currentTime: DateTime.now(),
-                                  locale: LocaleType.tr);
-                            },
-                          ),
-                        ),
-                      ],
+                ),
+                Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('assets/images/euro_money.png'),
                     ),
+                    title: Text('Euro'),
+                    subtitle: Text("9.65"),
+                    trailing: Icon(Icons.keyboard_arrow_right),
                   ),
-                  //Text(tarih.toString()),
-                  SizedBox(height: 15),
-                  CustomButtonWidget(
-                    title: "Para Birimi Ekle",
-                    textColor: whiteColor,
-                    buttonBackgroundColor: primaryColor,
-                    buttonIcon: Icons.add_circle_outline_outlined,
+                ),
+                Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('assets/images/lari_money.png'),
+                    ),
+                    title: Text('Lari'),
+                    subtitle: Text("1.25"),
+                    trailing: Icon(Icons.keyboard_arrow_right),
                   ),
-                  SizedBox(height: 20),
-                ],
-              ),
+                ),
+                Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('assets/images/riyal_money.png'),
+                    ),
+                    title: Text('Riyal'),
+                    subtitle: Text("2.90"),
+                    trailing: Icon(Icons.keyboard_arrow_right),
+                  ),
+                ),
+                Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('assets/images/yuan_money.png'),
+                    ),
+                    title: Text('Yuan'),
+                    subtitle: Text("8.65"),
+                    trailing: Icon(Icons.keyboard_arrow_right),
+                  ),
+                ),
+              ],
             ),
-          ),
         ),
       ),
     );
