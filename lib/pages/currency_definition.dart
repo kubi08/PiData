@@ -64,57 +64,50 @@ class _CurrencyDefinitionPageState extends State<CurrencyDefinitionPage> {
                 FDottedLine(
                   corner: FDottedLineCorner.all(2),
                   child: Container(
-                    margin:EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 30),
+                    margin:EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 20),
                     child: Column(
                       children: [
-                        FittedBox(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 155,
-                                child: Card(
-                                  shape:  RoundedRectangleBorder(
-                                      side: new BorderSide(color: Colors.grey.shade700, width: 1),
-                                      borderRadius: BorderRadius.circular(4.0)),
-                                  elevation: 0.5,
-                                  child: Column(
-                                    children: <Widget>[
-                                      Padding(
-                                          padding: EdgeInsets.only(left: 10),
-                                          child: Row(
-                                            children: <Widget>[
-                                              DropdownMenuWidget(),
-                                            ],
-                                          ))
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: 155,
-                                child: Card(
-                                  shape:  RoundedRectangleBorder(
-                                      side:  BorderSide(color: Colors.grey.shade700, width: 1),
-                                      borderRadius: BorderRadius.circular(4.0)),
-                                  elevation: 0.5,
-                                  child: Column(
-                                    children: <Widget>[
-                                      Padding(
-                                          padding: EdgeInsets.only(left: 10),
-                                          child: Row(
-                                            children: <Widget>[
-                                              CountryDropdownMenuWidget(),
-                                            ],
-                                          ))
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
+                        Container(
+                          height: 50,
+                          width: 320,
+                          child: FlatButton.icon(
+                            icon: Icon(Icons.monetization_on_outlined,color: secondaryColor),
+                            shape: RoundedRectangleBorder(
+                                side: new BorderSide(
+                                    color: Colors.grey.shade500, width: 1),
+                                borderRadius: BorderRadius.circular(4.0)),
+
+                            label: Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Row(
+                                  children: <Widget>[
+                                    DropdownMenuWidget(),
+                                  ],
+                                )),
                           ),
                         ),
-                        SizedBox(height: 15),
+                        SizedBox(height: 10),
+                        Container(
+                          height: 50,
+                          width: 320,
+                          child: FlatButton.icon(
+                            icon: Icon(Icons.account_balance_outlined,color: secondaryColor,),
+                            shape: RoundedRectangleBorder(
+                                side: new BorderSide(
+                                    color: Colors.grey.shade500, width: 1),
+                                borderRadius: BorderRadius.circular(4.0)),
+
+                            label: Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Row(
+                                  children: <Widget>[
+                                    CountryDropdownMenuWidget(),
+                                  ],
+                                )),
+                          ),
+                        ),
+
+                        SizedBox(height: 10),
                         Container(
                             width: 320,
                             child: TextField(

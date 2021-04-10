@@ -53,49 +53,43 @@ class _CurrencyListPageState extends State<CurrencyListPage> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(left: 10,right: 10),
-                          height: 60,
+                          height: 50,
                           width: 320,
-                          child: Card(
+                          child: FlatButton.icon(
+                            icon: Icon(Icons.monetization_on_outlined,color: secondaryColor),
                             shape: RoundedRectangleBorder(
                                 side: new BorderSide(
                                     color: Colors.grey.shade500, width: 1),
                                 borderRadius: BorderRadius.circular(4.0)),
-                            elevation: 0.5,
-                            child: Column(
-                              children: <Widget>[
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Row(
-                                      children: <Widget>[
-                                        DropdownMenuWidget(),
-                                      ],
-                                    ))
-                              ],
-                            ),
+
+                            label: Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Row(
+                                  children: <Widget>[
+                                    DropdownMenuWidget(),
+                                  ],
+                                )),
                           ),
                         ),
                         SizedBox(height: 10),
                         Container(
                           margin: EdgeInsets.only(left: 10,right: 10),
-                          height: 60,
+                          height: 50,
                           width: 320,
-                          child: Card(
+                          child: FlatButton.icon(
+                            icon: Icon(Icons.account_balance_outlined,color: secondaryColor,),
                             shape: RoundedRectangleBorder(
                                 side: new BorderSide(
                                     color: Colors.grey.shade500, width: 1),
                                 borderRadius: BorderRadius.circular(4.0)),
-                            elevation: 0.5,
-                            child: Column(
-                              children: <Widget>[
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Row(
-                                      children: <Widget>[
-                                        CountryDropdownMenuWidget(),
-                                      ],
-                                    ))
-                              ],
-                            ),
+
+                            label: Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Row(
+                                  children: <Widget>[
+                                    CountryDropdownMenuWidget(),
+                                  ],
+                                )),
                           ),
                         ),
                       ],
