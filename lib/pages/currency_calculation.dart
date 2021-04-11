@@ -1,6 +1,5 @@
 import 'package:fdottedline/fdottedline.dart';
 import 'package:flutter/material.dart';
-//
 import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/widgets/currency_dropdown.dart';
 import 'package:pi_data/widgets/custom_button.dart';
@@ -17,7 +16,7 @@ class _CurrencyCalculationPageState extends State<CurrencyCalculationPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
-        title: Text('Kur Hesaplama'),
+        title: Text('PidataSoft',style: TextStyle(color: whiteColor,fontSize: 30,fontFamily:'primaryFont',height: 2)),
       ),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -138,10 +137,11 @@ class _CurrencyCalculationPageState extends State<CurrencyCalculationPage> {
                       ),
                       SizedBox(height: 15),
                       CustomButtonWidget(
-                        title: "Para Birimi Ekle",
+                        onClick: () {},
+                        title: "Kuru Hesapla",
                         textColor: whiteColor,
                         buttonBackgroundColor: primaryColor,
-                        buttonIcon: Icons.add_circle_outline_outlined,
+                        buttonIcon: Icons.calculate_outlined,
                       ),
                     ],
                   ),

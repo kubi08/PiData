@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pi_data/pages/pidata_about.dart';
 import 'package:pi_data/config/colors.dart';
 
 class SlideDrawerMenuWidget extends StatelessWidget {
@@ -43,93 +44,27 @@ class SlideDrawerMenuWidget extends StatelessWidget {
 
               ListTile(
                 leading: Icon(
-                  Icons.person_outlined,
+                  Icons.insert_chart_outlined_outlined,
                   color: primaryColor,
                   size: 25,
                 ),
                 title: Text(
-                  "Müşteri Girişi",
+                  "Pidata ",
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.grey.shade700,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                onTap: () {
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => PiDataAboutPage(),));
+                },
+              ),
+              Divider(
+                height: 0,
+                color: Colors.grey.shade300,
+              ),
 
-                onTap: () {
-                 // Navigator.push(context, MaterialPageRoute(builder: (context) => CustomerLoginPage(),));
-                },
-              ),
-              Divider(
-                height: 0,
-                color: Colors.grey.shade300,
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.build_outlined,
-                  color: primaryColor,
-                  size: 25,
-                ),
-                title: Text(
-                  "Servis Girişi",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.grey.shade700,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => EmployeeLoginPage(),));
-                },
-              ),
-              Divider(
-                height: 0,
-                color: Colors.grey.shade300,
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.help_outline,
-                  color: primaryColor,
-                  size: 25,
-                ),
-                title: Text(
-                  "Yardım ",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.grey.shade700,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-               //   Navigator.push(context, MaterialPageRoute(builder: (context) => HelpPage(),));
-                },
-              ),
-              Divider(
-                height: 0,
-                color: Colors.grey.shade300,
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.info_outline,
-                  color: primaryColor,
-                  size: 25,
-                ),
-                title: Text(
-                  "Hakkında",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.grey.shade700,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                 // Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage(),));
-                },
-              ),
-              Divider(
-                height: 0,
-                color: Colors.grey.shade300,
-              ),
               ListTile(
                 leading: Icon(
                   Icons.exit_to_app_rounded,

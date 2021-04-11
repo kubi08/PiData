@@ -158,11 +158,6 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: primaryColor,
-      statusBarBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.light,
-    ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
@@ -170,9 +165,8 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
         child: Scaffold(
 
           appBar: AppBar(
-
             backgroundColor: primaryColor,
-            //backgroundColor: Color(0xff308e1c),
+
             bottom: TabBar(
               indicatorColor: Color(0xff9962D0),
               tabs: [
@@ -183,7 +177,7 @@ class _CurrencyChartPageState extends State<CurrencyChartPage> {
                 Tab(icon: Icon(FontAwesomeIcons.chartLine)),
               ],
             ),
-            title: Text('Para Grafiği'),
+            title:Text('PidataSoft',style: TextStyle(color: whiteColor,fontSize: 30,fontFamily:'primaryFont',height: 2)),
           ),
           body: TabBarView(
             children: [

@@ -5,6 +5,7 @@ class CustomButtonWidget extends StatelessWidget {
   final String title;
   final Function function;
   final Color textColor;
+  final Function onClick;
   final Color buttonBackgroundColor;
 
   const CustomButtonWidget(
@@ -13,6 +14,7 @@ class CustomButtonWidget extends StatelessWidget {
       this.title,
       this.function,
       this.textColor,
+      this.onClick,
       this.buttonBackgroundColor})
       : super(key: key);
 
@@ -22,9 +24,7 @@ class CustomButtonWidget extends StatelessWidget {
       height: 45,
       width: 320,
       child: RaisedButton.icon(
-          onPressed: () {
-            print('Button Clicked.');
-          },
+          onPressed:onClick,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(10.0))),
           label: Text(

@@ -22,7 +22,7 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
-        title: Text('Kurları Güncelle'),
+        title:Text('PidataSoft',style: TextStyle(color: whiteColor,fontSize: 30,fontFamily:'primaryFont',height: 2)),
       ),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -206,10 +206,11 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                 //Text(tarih.toString()),
                 SizedBox(height: 15),
                 CustomButtonWidget(
-                  title: "Para Birimi Ekle",
+                  title: "Kuru Güncelle",
                   textColor: whiteColor,
+                  onClick: () {},
                   buttonBackgroundColor: primaryColor,
-                  buttonIcon: Icons.add_circle_outline_outlined,
+                  buttonIcon: Icons.autorenew_outlined,
                 ),
                 SizedBox(height: 20),
               ],

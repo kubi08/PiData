@@ -16,7 +16,8 @@ class _CurrencyListPageState extends State<CurrencyListPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
-        title: Text('Kur Listesi'),
+        title:Text('PidataSoft',
+        style: TextStyle(color: whiteColor,fontSize: 30,fontFamily:'primaryFont',height: 2)),
       ),
       resizeToAvoidBottomInset: false,
       body: Container(

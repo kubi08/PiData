@@ -42,8 +42,7 @@ class _CurrencyDefinitionPageState extends State<CurrencyDefinitionPage> {
             margin: EdgeInsets.only(left: 15,right: 15),
             child: Column(
               children: <Widget>[
-                Divider(height: 1, color: Colors.grey.shade700),
-                SizedBox(height: 10), //Card
+                SizedBox(height: 5), //Card
                 SizedBox(
                     height: 150.0,
                     width: 320.0,
@@ -126,6 +125,7 @@ class _CurrencyDefinitionPageState extends State<CurrencyDefinitionPage> {
                         ),
                         SizedBox(height: 15),
                         CustomButtonWidget(
+                          onClick: () {},
                           title: "Para Birimi Ekle",
                           textColor: whiteColor,
                           buttonBackgroundColor: primaryColor,

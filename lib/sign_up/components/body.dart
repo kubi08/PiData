@@ -78,7 +78,7 @@ class Body extends StatelessWidget {
                   press: () {},
                 ),
                 SocialIcon(
-                  iconSrc: "assets/icons/google-plus.svg",
+                  iconSrc: "assets/icons/google_plus.svg",
                   press: () {},
                 ),
               ],
