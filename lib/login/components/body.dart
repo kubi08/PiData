@@ -8,6 +8,7 @@ import 'package:pi_data/components/rounded_button.dart';
 import 'package:pi_data/components/rounded_input_field.dart';
 import 'package:pi_data/components/rounded_password_field.dart';
 import 'package:pi_data/config/colors.dart';
+import 'package:pi_data/widgets/bottom_navigation_bar.dart';
 
 
 class Body extends StatelessWidget {
@@ -46,7 +47,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SignUpScreen();
+                      return BottomBarWidget();
                     },
                   ),
                 );
