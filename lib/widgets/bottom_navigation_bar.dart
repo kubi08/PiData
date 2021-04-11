@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pi_data/config/strings.dart';
 import 'package:pi_data/pages/currency_calculation.dart';
 import 'package:pi_data/pages/currency_chart.dart';
 import 'package:pi_data/pages/currency_definition.dart';
@@ -49,11 +50,11 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
         currentIndex: currentTabIndex,
         type: BottomNavigationBarType.fixed,
         items:<BottomNavigationBarItem> [
-          BottomNavigationBarItem(icon:Icon(Icons.money_off_csred_outlined), label: "Tanımla"),
-          BottomNavigationBarItem(icon:Icon(Icons.update_outlined), label: "Güncelle"),
-          BottomNavigationBarItem(icon:Icon(Icons.format_line_spacing_outlined), label: "Listele"),
-          BottomNavigationBarItem(icon:Icon(Icons.calculate_outlined), label: "Hesapla"),
-          BottomNavigationBarItem(icon:Icon(Icons.insert_chart_outlined_outlined), label: "Grafik"),
+          BottomNavigationBarItem(icon:Icon(Icons.money_off_csred_outlined), label: bottomDefinitionText),
+          BottomNavigationBarItem(icon:Icon(Icons.update_outlined), label: bottomUpdateText),
+          BottomNavigationBarItem(icon:Icon(Icons.format_line_spacing_outlined), label: bottomListText),
+          BottomNavigationBarItem(icon:Icon(Icons.calculate_outlined), label: bottomCalculationText),
+          BottomNavigationBarItem(icon:Icon(Icons.insert_chart_outlined_outlined), label:bottomChartText),
         ],
       ),
       body: currentPage,
