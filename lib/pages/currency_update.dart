@@ -2,11 +2,13 @@ import 'package:fdottedline/fdottedline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:pi_data/config/colors.dart';
+import 'package:pi_data/model/date_provider.dart';
 import 'package:pi_data/widgets/currency_dropdown.dart';
 import 'package:pi_data/widgets/country_dropdown.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:pi_data/widgets/custom_button.dart';
 import 'package:pi_data/widgets/slide_drawer_menu.dart';
+import 'package:provider/provider.dart';
 
 class CurrencyUpdatePage extends StatefulWidget {
   @override
@@ -19,8 +21,10 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
 
   @override
   Widget build(BuildContext context) {
+    var dateProvider = Provider.of<DateProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: primaryColor,
         title:Text('PidataSoft',style: TextStyle(color: whiteColor,fontSize: 30,fontFamily:'primaryFont',height: 2)),
       ),
@@ -109,12 +113,13 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                                 maxTime: DateTime(2020, 31, 12),
                                 onChanged: (date) {
                                   setState(() {
-                                    startDate = date.toString().substring(0,11);
+                                    dateProvider.startDateProvider();
+                                   dateProvider.startDate = date.toString().substring(0,11);
                                   });
 
-                                  print('change $date');
+
                                 }, onConfirm: (date) {
-                                  print('confirm $date');
+
                                 },
                                 currentTime: DateTime.now(),
                                 locale: LocaleType.tr);
@@ -141,13 +146,11 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                                 minTime: DateTime(2008, 1, 1),
                                 maxTime: DateTime(2020, 31, 12),
                                 onChanged: (date) {
-                                  setState(() {
-                                    endDate = date.toString().substring(0,11);
-                                  });
+                                    dateProvider.endDateProvider();
+                                    dateProvider.endDate = date.toString().substring(0,11);
 
-                                  print('change $date');
                                 }, onConfirm: (date) {
-                                  print('confirm $date');
+
                                 },
                                 currentTime: DateTime.now(),
                                 locale: LocaleType.tr);
@@ -174,7 +177,7 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                             ),
                             Container(
                               margin: EdgeInsets.only(top: 5),
-                              child: Text("$startDate",style: TextStyle(color:primaryColor,
+                              child: Text(dateProvider.startDate,style: TextStyle(color:primaryColor,
                                   fontSize: 13),textAlign: TextAlign.left,),
                             ),
 
@@ -193,7 +196,7 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                             ),
                             Container(
                               margin: EdgeInsets.only(top: 5),
-                              child: Text("$endDate",style: TextStyle(color:primaryColor,
+                              child: Text(dateProvider.endDate,style: TextStyle(color:primaryColor,
                                   fontSize: 13),textAlign: TextAlign.left,),
                             ),
 
@@ -203,7 +206,7 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                     ],
                   ),
                 ),
-                //Text(tarih.toString()),
+
                 SizedBox(height: 15),
                 CustomButtonWidget(
                   title: "Kuru Güncelle",

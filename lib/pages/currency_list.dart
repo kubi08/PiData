@@ -15,6 +15,7 @@ class _CurrencyListPageState extends State<CurrencyListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: primaryColor,
         title:Text('PidataSoft',
         style: TextStyle(color: whiteColor,fontSize: 30,fontFamily:'primaryFont',height: 2)),

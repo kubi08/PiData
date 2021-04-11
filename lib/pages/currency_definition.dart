@@ -31,7 +31,7 @@ class _CurrencyDefinitionPageState extends State<CurrencyDefinitionPage> {
           '  Para Tanımlama',
           textAlign: TextAlign.left,
           style: TextStyle(
-              fontSize: 18,
+              fontSize: 25,
               color: Colors.red,
               fontWeight: FontWeight.w500,
               fontFamily: 'primaryFont'),

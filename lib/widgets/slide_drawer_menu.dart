@@ -88,7 +88,7 @@ class SlideDrawerMenuWidget extends StatelessWidget {
                 color: Colors.grey.shade300,
               ),
               SizedBox(
-                height: 200,
+                height: 350,
               )
             ],
           ),
