@@ -5,9 +5,8 @@ import 'package:pi_data/config/colors.dart';
 import 'package:pi_data/model/date_provider.dart';
 import 'package:pi_data/widgets/currency_dropdown.dart';
 import 'package:pi_data/widgets/country_dropdown.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:pi_data/widgets/capture_view_dialog_first.dart';
 import 'package:pi_data/widgets/custom_button.dart';
-import 'package:pi_data/widgets/slide_drawer_menu.dart';
 import 'package:provider/provider.dart';
 
 class CurrencyUpdatePage extends StatefulWidget {
@@ -22,6 +21,8 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
   @override
   Widget build(BuildContext context) {
     var dateProvider = Provider.of<DateProvider>(context);
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -215,7 +216,13 @@ class _CurrencyUpdatePageState extends State<CurrencyUpdatePage> {
                   buttonBackgroundColor: primaryColor,
                   buttonIcon: Icons.autorenew_outlined,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 5),
+                FlatButton.icon(onPressed: () {
+                  captureViewDialogFirst(context, width, height,
+                      imagePath: "assets/images/help_image.jpg");
+                }, label: Text("Yardım"),
+                icon: Icon(Icons.help_outline_outlined,color: secondaryColor,),
+                )
               ],
             ),
           ),

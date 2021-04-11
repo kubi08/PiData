@@ -2,7 +2,7 @@
     package="com.kubisoft.pi_data">
    <application
         android:label="pi_data"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
